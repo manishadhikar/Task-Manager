@@ -1,0 +1,14 @@
+﻿
+
+@if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+{
+    <div id="success-alert" class="alert alert-success">@ViewBag.SuccessMessage</div>
+}
+<script>
+    $(document).ready(function () {
+        $('#success-alert').fadeIn('slow');
+        setTimeout(function () {
+            $('#success-alert').fadeOut('slow');
+        }, 5000);
+    });
+</script>

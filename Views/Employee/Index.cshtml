@@ -1,0 +1,25 @@
+﻿
+<head>
+    <style>
+        #success-alert {
+            position: fixed;
+            top: -100px;
+            right: 20px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+    {
+        <div id="success-alert" class="alert alert-success">@ViewBag.SuccessMessage</div>
+    }
+    <script>
+        $(document).ready(function () {
+            $('#success-alert').animate({ top: '20px' }, 'slow');
+            setTimeout(function () {
+                $('#success-alert').animate({ top: '-100px' }, 'slow');
+            }, 5000);
+        });
+    </script>
+</body>
